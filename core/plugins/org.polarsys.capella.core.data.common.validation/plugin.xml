@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+  Copyright (c) 2006, 2016 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <constraintProvider>
+         <package
+               namespaceUri="http://www.polarsys.org/capella/core/common/1.2.0">
+         </package>
+         <constraints
+               categories=" capella.category/transition/consistency/state_machines">
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.T01_StateTransition_RealizationBounds"
+                  id="TC_SM_01"
+                  isEnabledByDefault="true"
+                  lang="java"
+                  mode="Batch"
+                  name="TC_SM_01 - StateTransition Realization"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {0} (StateTransition) realizes a StateTransition from a previous level. It should be consistent with the realized StateTransition.
+               </message>
+               <target
+                     class="StateTransition">
+               </target>
+               <description>
+                  This rule checks that a StateTransition realizing a StateTransition from a previous level is consistent with the realized StateTransition and the Bounds of the StateTransition realize both bounds of the realized StateTransition.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.TC02_Region_History"
+                  id="TC_SM_02"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="TC_SM_02 -  A Region shall have only one Shallow/Deep History State"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  Region {0} has two history states of the same type.
+               </message>
+               <target
+                     class="Region">
+               </target>
+               <description>
+                  This rule check that region have unique history state.
+               </description>
+            </constraint>               
+         </constraints>
+         <constraints
+               categories="capella.category/design/well-formedness/state_machines">
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_ControleNode_Transition"
+                  id="DWF_SM_04"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_04 - A decision or a fork must have only one entering transition"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0} ({1}) must only have one incoming transition.
+               </message>
+               <target
+                     class="Pseudostate">
+               </target>
+               <description>
+                  This rule checks that a decision or a fork have only one entering transition.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_JoinNode_Transition"
+                  id="DWF_SM_05"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_05 - A join connector must have only one outgoing transition"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  the {0} ({1}) must have only one outgoing transition
+               </message>
+               <target
+                     class="JoinPseudoState">
+               </target>
+               <description>
+                  This rule checks that a join connector have only one outgoing transition.
+               </description>
+            </constraint>
+            
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_StateMachine_InitialState"
+                  id="DWF_SM_01"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_01 - A state machine must have only one initial state"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0} (StateMachine) have more than one initial state.
+               </message>
+               <target
+                     class="StateMachine">
+               </target>
+               <description>
+                  This rule checks that a state machine have only one initial state
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_InitialState_Transition"
+                  id="DWF_SM_02"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_02 - An initial state must have only one outgoing transition"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0} ({1}) have more than one outgoing transition
+               </message>
+               <target
+                     class="InitialPseudoState">
+               </target>
+               <description>
+                  This rule checks that an initial state have only one outgoing transition.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_State_InvolvedStates"
+                  id="DWF_SM_03"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_03 - Referenced states of a state must be all involved states in its subregions"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  The State/Mode {0} have an incoherent involvedStates list.
+               </message>
+               <target
+                     class="State">
+               </target>
+               <description>
+                  This rule checks that referenced  States in a State are the sum of all involved States of sub regions.
+               </description>
+			</constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_State_Mode_Hierarchy"
+                  id="DWF_SM_06"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_06 - Mode and State should&apos;nt be in same hierarchy"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {1} ({0}) has at least a {2} in his hierarchy.
+               </message>
+               <target
+                     class="State">
+               </target>
+               <description>
+                  This rule depends on the Preference option &quot;Mode/State mixed hierarchy allowed&quot;. If this option is set to false, the rule checks that  a state is not in a mode hierarchy or a mode is not in a state hierarchy. In this case, hierarchy includes siblings.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_JoinForkState_Region"
+                  id="DWF_SM_07"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_07 - Fork and Join State must be used in the context of concurrent Region"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {0} {1} {2} transitions must be in different region of the same state/mode.
+               </message>
+               <target
+                     class="Pseudostate">
+               </target>
+               <description>
+                  This rule ensure that Join/Fork states are used in concurrent region context.
+               </description>
+            </constraint>
+           <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_StateMachine_Function"
+                  id="DWF_SM_08"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_08 - State must reference a function with doActivity/entry/exit related with its owning component"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {0} of {2} shall not reference functions ({1}) which are not allocated on the component owning the state Machine ({3}) or one of its subcomponents.
+               </message>
+               <target
+                     class="State">
+               </target>
+               <description>
+                  This rule check if doActivity/Entry/Exit reference only functions associated to the component owning the state Machine or allocated to one of its subcomponents.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_StateTransition_Trigger"
+                  id="DWF_SM_09"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_09 - StateTransitions trigger shall not reference unallocated Functions or Functional Exchanges  and be consistent with business query."
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  StateTransiton to {0} is triggered by an element which is not referencable ({1}).
+                  </message>
+               <target
+                     class="StateTransition">
+               </target>
+               <description>
+                  This rule check that Functions or Functional Exchanges which triggers the StateTransition are allocated on the Component or one of its subcomponents.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_StateTransiton_Region"
+                  id="DWF_SM_10"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_10 - StateTransition source and target shouldn&apos;t be stored in concurrent region"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  [StateTransiton] to {0} has its source and target stored in concurrent region.
+               </message>
+               <target
+                     class="StateTransition">
+               </target>
+               <description>
+                  This rule check that source and target of StateTransition are not stored in concurrent region.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_EntryPoint_Transition"
+                  id="DWF_SM_11"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_11 -  EntryPoint must have only one outgoing transition and one or more incoming transition"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  EntryPoint {0} has not a single outgoing transition or has no incoming transition.
+               </message>
+               <target
+                     class="EntryPointPseudoState">
+               </target>
+               <description>
+                  This rule check that EntryPoint have only one outgoing transition and one or more incoming transition.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_ExitPoint_Transition"
+                  id="DWF_SM_12"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_12 - ExitPoint must have only one incoming transition and one or more outgoing transition"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  ExitPoint {0} has not a single incoming transition or has no outgoing transition.
+               </message>
+               <target
+                     class="ExitPointPseudoState">
+               </target>
+               <description>
+                  This rule check that ExitPoint have only one incoming transition and one or more outgoing transition.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_History_Transition"
+                  id="DWF_SM_13"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_13 - Shallow/Deep History shall have only incoming transitions"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0} {1} has outgoing transitions.
+               </message>
+               <target
+                     class="Pseudostate">
+               </target>
+               <description>
+                  This rule check that Shallow/Deep History state has only incoming transitions.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_StateMachine_AvailableFunctions"
+                  id="DWF_SM_14"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_14 - Functions referenced in a State must be referened as available in this State."
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {0} reference ({1}) that must be referenced as Operational Activities/Functions in {2}.
+               </message>
+               <target
+                     class="State">
+               </target>
+               <description>
+                  This rule check that Functions referenced as DoActivity, Entry or Exit of a Mode/State are available via the Operational Activities/Functions reference of this State.
+               </description>
+            </constraint>
+            <constraint
+                  class="org.polarsys.capella.core.data.common.validation.statetransition.MDCHK_State_Mode_Reuse"
+                  id="DWF_SM_15"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DWF_SM_15 - Mode and State shouldn&apos;t reuse each other"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {1} ({0}) reuses at least a {2}.
+               </message>
+               <target
+                     class="State">
+               </target>
+               <description>
+                  This rule depends on the Preference option&quot;Mode/State mixed hierarchy allowed&quot;. If this option is set to false, the rule checks that a state does not reuse a mode or a mode does not reuse a state.
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+</plugin>

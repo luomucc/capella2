@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2006, 2017, 2018 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<plugin>
+
+   <extension
+         name="Property view"
+         point="org.polarsys.capella.common.flexibility.properties">
+      <properties
+            id="org.polarsys.capella.common.re.ReAbstractElement">
+         <group
+               id="org.polarsys.capella.common.properties.replicableElement"
+               name="Replicable Element">
+         </group>
+         <group
+               id="org.polarsys.capella.common.properties.replicableElement.information"
+               name="Information"
+               parent="org.polarsys.capella.common.properties.replicableElement">
+         </group>
+         <group
+               id="org.polarsys.capella.common.properties.replicableElement.information.name"
+               name="Name"
+               parent="org.polarsys.capella.common.properties.replicableElement.information">
+         </group>
+         <group
+               id="org.polarsys.capella.common.properties.replicableElement.information.content"
+               name="Content"
+               parent="org.polarsys.capella.common.properties.replicableElement.information">
+         </group>
+      </properties>
+      
+      <properties
+            id="org.polarsys.capella.common.re.ReNamedElement">
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.name"
+               id="org.polarsys.capella.common.re.ReNamedElement_name"
+               name="Name">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.ReNamedElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="name">
+            </parameter>
+         </property>
+         
+      </properties>
+      
+      <properties
+            id="org.polarsys.capella.common.re.ReDescriptionElement">
+      
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.name"
+               id="org.polarsys.capella.common.re.ReDescriptionElement_description"
+               name="Description">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.ReDescriptionElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="description">
+            </parameter>
+         </property>
+         
+      </properties>
+         
+         
+      <properties
+            id="org.polarsys.capella.common.re.CatalogElement">
+         <property
+               class="org.polarsys.capella.common.re.properties.CatalogElementSuffixProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.name"
+               id="org.polarsys.capella.common.re.ReNamedElement_suffix"
+               name="Suffix">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="suffix">
+            </parameter>
+         </property>
+       
+       
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.content"
+               id="org.polarsys.capella.common.re.CatalogElement_author"
+               name="Author">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="author">
+            </parameter>
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.content"
+               id="org.polarsys.capella.common.re.CatalogElement_environment"
+               name="Environment">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="environment">
+            </parameter>
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.content"
+               id="org.polarsys.capella.common.re.CatalogElement_tags"
+               name="Tags">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElement">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="tags">
+            </parameter>
+         </property>
+         <property
+               class="org.polarsys.capella.common.flexibility.properties.property.EAdaptableFeatureProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.content"
+               id="org.polarsys.capella.common.re.CatalogElement_readOnly"
+               name="Enforce RPL Compliance On The Fly">
+               <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElement">
+               </parameter>
+               <parameter
+                  id="feature"
+                  value="readOnly">
+            </parameter>
+         </property>
+         
+      </properties>
+      <properties
+            id="org.polarsys.capella.common.re.CatalogElementLink">
+         <property
+               class="org.polarsys.capella.common.re.properties.CatalogElementLinkSuffixProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.properties.replicableElement.information.content"
+               id="org.polarsys.capella.common.re.CatalogElementLink.suffixed"
+               name="Suffixed">
+            <parameter
+                  id="eclass"
+                  value="org.polarsys.capella.common.re.CatalogElementLink">
+            </parameter>
+            <parameter
+                  id="feature"
+                  value="suffixed">
+            </parameter>
+         </property>
+      </properties>
+      
+      
+      
+   </extension>
+   
+   
+    <extension
+          point="org.polarsys.capella.common.flexibility.properties">
+      <properties
+            id="org.polarsys.capella.common.re">
+            
+         <group id="org.polarsys.capella.common.re.description"
+                name="Description">
+         </group>
+         
+         <group id="replicableElementGroup"
+                parent="org.polarsys.capella.common.re.description">
+         </group>
+         
+         
+         <group id="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+                parent="org.polarsys.capella.common.re.description.replicableElementGroup">
+         </group>
+         
+         <group id="org.polarsys.capella.common.re.description.replicableElementGroup"
+                parent="replicableElementGroup">
+         </group>
+         
+         <group id="org.polarsys.capella.common.re.description.location"
+                name="RPL information (when REC is created in a library)"
+                parent="replicableElementGroup">
+         </group>
+         
+         
+         <group id="replicaGroup"
+                parent="org.polarsys.capella.common.re.description">
+         </group>
+         
+         <group id="org.polarsys.capella.common.re.description.replicaGroup.child"
+                parent="replicaGroup">
+         </group>
+         
+         <group id="debug"
+                parent="org.polarsys.capella.common.re.description">
+         </group>
+
+        <property
+               class="org.polarsys.capella.common.re.properties.SharedElementsProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="sharedElements"
+               name="Shared elements"
+               description="Select elements from model">
+        </property>
+        
+        
+        
+        <property
+               class="org.polarsys.capella.common.re.properties.InvalidSharedElementsProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="invalidSharedElements"
+               name="Invalid Shared elements"
+               description="Shared Elements not accessible from the target location">
+        </property>
+        
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="locationTarget"
+               name="Catalog">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationSourceProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="locationSource"
+               name="Catalog">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.SuffixesProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="suffixes"
+               name="Suffixes">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.CurrentSourceProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="source"
+               name="REC">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.CurrentTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="target"
+               name="RPL">
+         </property>
+         
+      </properties>
+      
+      <properties
+            id="org.polarsys.capella.common.re.re2rpl">
+          <inheritance properties="org.polarsys.capella.common.re" />
+            
+        <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.MergeSourceScopeProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="merge_sourceScope"
+               name="Source scope"
+               description="Select elements from model">
+         </property>
+         
+        <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.MergeTargetScopeProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="merge_targetScope"
+               name="Target scope"
+               description="Select elements from model">
+         </property>
+         
+        <property
+               class="org.polarsys.capella.common.re.properties.CollectionProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="org.polarsys.capella.common.re.selection"
+               name="Selected elements"
+               description="Select elements from model">
+         </property>
+         
+         
+      </properties>        
+                
+                 
+         <properties
+            id="org.polarsys.capella.common.re.rpl2re">
+          <inheritance properties="org.polarsys.capella.common.re" />
+            
+         
+        <property
+               class="org.polarsys.capella.common.re.properties.SuffixReminderProperty"
+               description="Reminds the user to manually set the suffix"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="suffixReminder"
+               name="Suffix reminder">
+        </property>
+         
+         
+        <property
+               class="org.polarsys.capella.common.re.properties.DependenciesProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="dependencies"
+               name="Dependencies"
+               description="Select elements from model">
+        </property>
+
+        <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.MergeSourceScopeProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="merge_sourceScope"
+               name="Source scope"
+               description="Select elements from model">
+         </property>
+         
+        <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.MergeTargetScopeProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="merge_targetScope"
+               name="Target scope"
+               description="Select elements from model">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationSourceProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.location"
+               id="locationSource"
+               name="Catalog">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.properties.SourceNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.location"
+               id="sourceName"
+               name="Name">
+         </property>
+         
+         
+         
+      </properties>
+         
+         
+         
+   </extension>
+   
+   
+   
+   
+   <extension point="org.polarsys.capella.common.flexibility.properties">
+      <properties id="org.polarsys.capella.common.re.createRec">
+         <inheritance properties="org.polarsys.capella.common.re.rpl2re" />
+            
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.properties.TargetNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="targetName"
+               name="Name">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="locationTarget"
+               name="Catalog">
+         </property>
+                 
+         <property
+               class="org.polarsys.capella.common.re.properties.DefaultChildrenCompliancyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="childrenCompliancy"
+               description="Default compliancy for new RPL"
+               name="Compliancy">
+         </property>
+                  
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.ReplicaProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.location"
+               id="isource"
+               name="RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.ReplicableElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.debug"
+               id="itarget"
+               name="REC">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.SourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+      
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.AllSourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.allScopeElements"
+               name="Scope">
+         </property>
+         
+         
+         
+      </properties>
+      
+      
+      
+      <properties id="org.polarsys.capella.common.re.updateDef">
+          <inheritance properties="org.polarsys.capella.common.re.rpl2re" />
+            
+            
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.properties.TargetNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="targetName"
+               name="Name">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="locationTarget"
+               name="Catalog">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatedef.properties.ReplicableElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="itarget"
+               name="REC">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatedef.properties.ReplicaProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="isource"
+               name="RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatedef.properties.SourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+      
+      
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.AllSourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.allScopeElements"
+               name="Scope">
+         </property>
+         
+      </properties>
+      
+      
+      <properties id="org.polarsys.capella.common.re.updateCur">
+          <inheritance properties="org.polarsys.capella.common.re.rpl2re" />
+            
+            
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatecur.properties.ReplicableElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="itarget"
+               name="REC">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.properties.TargetNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="targetName"
+               name="Name">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="locationTarget"
+               name="Catalog">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.DefaultChildrenCompliancyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="childrenCompliancy"
+               description="Default compliancy for new RPL"
+               name="Compliancy">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatecur.properties.ReplicaProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="isource"
+               name="RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.updatecur.properties.SourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+      
+      
+         <property
+               class="org.polarsys.capella.common.re.rpl2re.create.properties.AllSourceElementProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="source.allScopeElements"
+               name="Scope">
+         </property>
+      </properties>
+      
+      
+      <properties id="org.polarsys.capella.common.re.createReplica">
+          <inheritance properties="org.polarsys.capella.common.re.re2rpl" />
+          
+          
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.InitialSourceProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="isource"
+               name="REC">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.LocationTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="locationTarget"
+               name="Catalog">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.SuffixProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="suffix"
+               name="Suffix">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="targetName"
+               name="Name">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.CurrentCompliancyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="currentCompliancy"
+               name="Compliancy">
+         </property>
+         
+         
+         
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.properties.SourceElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.InitialTargetProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="itarget"
+               name="RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaContentProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="targetContent"
+               name="Content of new RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaContentLocationProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="targetContentLocation"
+               name="Catalog">
+         </property>
+         <property
+               class="org.polarsys.capella.common.re.properties.ReadOnlyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="readOnly"
+               name="Enforce RPL Compliance On The Fly">
+         </property>
+         <property
+               class="org.polarsys.capella.common.re.properties.ParentLocatorProperty"
+               enabled="true"
+               group="replicableElementGroup"
+               id="parentLocatorOption"
+               name="Parent Location">
+            <option
+                  enabled="true"
+                  id="defaultLocator"
+                  name="Use default locations"
+                  value="defaultLocator">
+            </option>
+            <option
+                  enabled="true"
+                  id="packageLocator"
+                  name="Create specific packages"
+                  value="packageLocator">
+            </option>
+            <option
+                  enabled="true"
+                  id="manualLocator"
+                  name="Locate parents manually"
+                  value="manualLocator">
+            </option>
+            <parameter
+                  id="default"
+                  value="defaultLocator">
+            </parameter>
+            <parameter
+                  id="scope"
+                  value="org.polarsys.capella.common.re">
+            </parameter>
+         </property>
+         
+     </properties>
+     
+      <properties id="org.polarsys.capella.common.re.rpl2rec.conformance.check">
+          <inheritance properties="org.polarsys.capella.common.re.re2rpl" />
+          <property
+               class="org.polarsys.capella.common.re.re2rpl.update.properties.ReplicableElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="isource"
+               name="REC">
+         </property>
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.properties.SourceElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.update.properties.ReplicaProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="itarget"
+               name="Name">
+         </property>
+     </properties> 
+     
+     <properties id="org.polarsys.capella.common.re.updateReplica">
+          <inheritance properties="org.polarsys.capella.common.re.re2rpl" />
+          
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.update.properties.ReplicableElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="isource"
+               name="REC">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.properties.SourceElementProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description"
+               id="source.scopeElements"
+               name="Scope">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.SuffixProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="suffix"
+               name="Suffix">
+         </property>
+         
+      
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaNameProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="targetName"
+               name="Name">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.CurrentCompliancyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup.child"
+               id="currentCompliancy"
+               name="Compliancy">
+         </property>
+
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.update.properties.ReplicaProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="itarget"
+               name="Name">
+         </property>
+         
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaContentProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="targetContent"
+               name="Content of new RPL">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.re2rpl.create.properties.ReplicaContentLocationProperty"
+               enabled="true"
+               group="replicaGroup"
+               id="targetContentLocation"
+               name="Catalog">
+         </property>
+         <property
+               class="org.polarsys.capella.common.re.properties.ReadOnlyProperty"
+               enabled="true"
+               group="org.polarsys.capella.common.re.description.replicableElementGroup"
+               id="readOnly"
+               name="Enforce RPL Compliance On The Fly">
+         </property>
+         
+         <property
+               class="org.polarsys.capella.common.re.properties.ParentLocatorProperty"
+               enabled="true"
+               group="replicableElementGroup"
+               id="parentLocatorOption"
+               name="Parent Location">
+            <option
+                  enabled="true"
+                  id="defaultLocator"
+                  name="Use default locations"
+                  value="defaultLocator">
+            </option>
+            <option
+                  enabled="true"
+                  id="packageLocator"
+                  name="Create specific packages"
+                  value="packageLocator">
+            </option>
+            <option
+                  enabled="true"
+                  id="manualLocator"
+                  name="Locate parents manually"
+                  value="manualLocator">
+            </option>
+            <parameter
+                  id="default"
+                  value="defaultLocator">
+            </parameter>
+            <parameter
+                  id="scope"
+                  value="org.polarsys.capella.common.re">
+            </parameter>
+         </property>
+         
+         
+     </properties>
+        
+   </extension>
+   
+   
+   
+   <extension point="org.eclipse.ui.commands"> <!-- should be named org.eclipse.core.commands -->
+
+    <category
+          id="org.polarsys.capella.common.re"
+          name="Replicable Elements"
+          description="Replicable Elements manipulation commands">
+    </category>
+    
+    <command id="org.polarsys.capella.common.re.createRec"
+          categoryId="org.polarsys.capella.common.re"
+          description="Create REC from selection"
+          name="Create REC from selection">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.updateCur"
+          categoryId="org.polarsys.capella.common.re"
+          description="%updateCur"
+          name="%updateCur">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.updateDef"
+          categoryId="org.polarsys.capella.common.re"
+          description="%updateDef"
+          name="%updateDef">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.createReplica"
+          categoryId="org.polarsys.capella.common.re"
+          description="Instantiate RPL from REC"
+          name="Instantiate RPL from REC">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.updateReplica"
+          categoryId="org.polarsys.capella.common.re"
+          description="%updateReplica"
+          name="%updateReplica">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.deleteReplicaPreserveRelatedElements"
+          categoryId="org.polarsys.capella.common.re"
+          description="Delete RPL but preserve related elements"
+          name="Delete RPL but preserve related elements">
+    </command>
+    
+    <command id="org.polarsys.capella.common.re.deleteReplicaAndRelatedElements"
+          categoryId="org.polarsys.capella.common.re"
+          description="Delete RPL and related elements"
+          name="Delete RPL and related elements">
+    </command>
+    
+   </extension>
+
+   <extension point="org.eclipse.ui.commandImages"> <!-- should be named org.eclipse.core.commandImages -->
+        
+        
+        <image commandId="org.polarsys.capella.common.re.updateDef"
+               icon="icons/full/etool16/ReplicableElement.gif">
+        </image>
+        
+        <image commandId="org.polarsys.capella.common.re.createReplica"
+               icon="icons/full/etool16/Replica.gif">
+        </image>
+        
+        <image commandId="org.polarsys.capella.common.re.updateReplica"
+               icon="icons/full/etool16/Replica.gif">
+        </image>
+        
+        <image commandId="org.polarsys.capella.common.re.deleteReplicaAndRelatedElements"
+               icon="icons/full/etool16/deleteModel.gif">
+        </image>
+        
+        <image commandId="org.polarsys.capella.common.re.deleteReplicaPreserveRelatedElements"
+               icon="icons/full/etool16/delete_element.gif">
+        </image>
+        
+   </extension>  
+     
+   
+   <extension id="org.polarsys.capella.common.re"
+         name="Create Replicable Element"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   
+   <extension id="org.polarsys.capella.common.re.rpl2re"
+         name="Replica to Replicable Element"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+            
+            <mappingPackage
+               name="re">
+            <mappingElement
+                  domainMetaClass="org.polarsys.capella.common.re.CatalogElement"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.capella.common.re.rpl2re.rules.ReplicableElementRule"
+                     incompleteRule="org.polarsys.capella.common.re.rpl2re.rules.ReplicableElementRule"
+                     enabled="true"
+                     name="ReplicableElement">
+               </defaultMappingPossibility>
+            </mappingElement>
+         </mappingPackage>
+         
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.createRec"
+         name="Create Replicable Element"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.rpl2re"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.updateCur"
+         name="Update current Replicable Element"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.rpl2re"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   
+   <extension id="org.polarsys.capella.common.re.updateDef"
+         name="Update definition  Replicable Element"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.rpl2re"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   
+   
+   <extension id="org.polarsys.capella.common.re.re2rpl"
+         name="Replicable Element to Replica"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+            
+            <mappingPackage
+               name="re">
+            <mappingElement
+                  domainMetaClass="org.polarsys.capella.common.re.CatalogElement"
+                  reuseExtendedElementDefaultPossibility="true"
+                  reuseExtendedElementPossibilities="true">
+               <defaultMappingPossibility
+                     completeRule="org.polarsys.capella.common.re.re2rpl.rules.ReplicableElementRule"
+                     incompleteRule="org.polarsys.capella.common.re.re2rpl.rules.ReplicableElementRule"
+                     enabled="true"
+                     name="ReplicableElement">
+               </defaultMappingPossibility>
+            </mappingElement>
+         </mappingPackage>
+         
+      </mapping>
+   </extension>
+   
+   
+   <extension id="org.polarsys.capella.common.re.createReplica"
+         name="Create Replica"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.re2rpl"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.rpl2rec.conformance.check"
+         name="Check RPL to REC Conformance"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.re2rpl"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="Check RPL to REC Conformancer"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="RPL to REC Conformance"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.updateReplica"
+         name="Update Replica"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.re2rpl"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.deleteReplicaPreserveRelatedElements"
+         name="Delete Replica but preserve related elements"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.re2rpl"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension id="org.polarsys.capella.common.re.deleteReplicaAndRelatedElements"
+         name="Delete Replica and related elements"
+         point="org.polarsys.kitalpha.transposer.rules.handler.mapping">
+      <mapping
+            extendedMappingExtensionID="org.polarsys.capella.common.re.re2rpl"
+            context="org.polarsys.capella.core.transition.common.context.TransitionContext"
+            description="A system transition"
+            domainHelper="org.polarsys.capella.core.transition.common.domain.DomainHelper"
+            mappingName="System Transition"
+            mappingPurpose="org.polarsys.capella.common.re">
+      </mapping>
+   </extension>
+   
+   <extension
+         point="org.polarsys.capella.core.transition.handlers">
+      <handlers
+            id="org.polarsys.capella.common.re"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re">
+         <domain
+               id="http://www.polarsys.org/capella/common/re/1.2.0">
+         </domain>
+      </handlers>
+      <handlers
+            id="org.polarsys.capella.common.re.sharedElements"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re.sharedElements">
+         <scopeRetriever
+               class="org.polarsys.capella.common.re.handlers.scope.SharedElementsScopeRetriever"
+               id="org.polarsys.capella.common.re.handlers.scope.SharedElementsScopeRetriever">
+         </scopeRetriever>
+      </handlers>
+      <handlers
+            id="org.polarsys.capella.common.re.validSharedElements"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re.validSharedElements">
+         <scopeFilter
+               class="org.polarsys.capella.common.re.handlers.scope.LibraryValidSharedElementsFilter"
+               id="org.polarsys.capella.common.re.handlers.scope.LibraryInvalidSharedElementsFilter">
+         </scopeFilter>
+      </handlers>
+      <handlers
+            id="org.polarsys.capella.common.re.dependencies"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re.dependencies">
+         <scopeRetriever
+               class="org.polarsys.capella.core.transition.common.handlers.scope.RuleRequiredElementsScopeRetriever"
+               id="org.polarsys.capella.core.transition.common.handlers.scope.RuleRequiredElementsScopeRetriever">
+         </scopeRetriever>
+      </handlers>
+      <handlers
+            id="org.polarsys.capella.common.re.scopeElements"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re.scopeElements">
+         <scopeRetriever
+               class="org.polarsys.capella.common.re.handlers.scope.ContainmentScopeRetriever"
+               id="org.polarsys.capella.common.re.handlers.scope.ContainmentScopeRetriever">
+         </scopeRetriever>
+      </handlers>
+      <handlers
+            id="org.polarsys.capella.common.re.relatedElements"
+            mapping="org.polarsys.capella.common.re"
+            purpose="org.polarsys.capella.common.re.relatedElements">
+         <scopeRetriever
+               class="org.polarsys.capella.common.re.handlers.scope.ReferencerScopeRetriever"
+               id="org.polarsys.capella.common.re.handlers.scope.ReferencerScopeRetriever">
+         </scopeRetriever>
+         <scopeFilter
+               class="org.polarsys.capella.common.re.handlers.scope.CatalogElementLinkFilter"
+               id="org.polarsys.capella.common.re.handlers.scope.CatalogElementLinkFilter">
+         </scopeFilter>
+      </handlers>
+      
+   </extension>   
+          
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.activities.AttachmentActivity"
+            Identifier="org.polarsys.capella.common.re.activities.AttachmentActivity"
+            Multiple="false"
+            Name="Initialization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize transition.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.rpl2re.activities.InitializeTransitionActivity"
+            Identifier="org.polarsys.capella.common.re.rpl2re.activities.InitializeTransitionActivity"
+            Multiple="false"
+            Name="Initialization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize transition.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.re2rpl.activities.InitializeTransitionActivity"
+            Identifier="org.polarsys.capella.common.re.re2rpl.activities.InitializeTransitionActivity"
+            Multiple="false"
+            Name="Initialization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize transition.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.activities.InitializeReMgtActivity"
+            Identifier="org.polarsys.capella.common.re.activities.InitializeReMgtActivity"
+            Multiple="false"
+            Name="Initialization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize transition.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   
+    <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.activities.MakeTraceabilityActivity"
+            Identifier="org.polarsys.capella.common.re.activities.MakeTraceabilityActivity"
+            Multiple="false"
+            Name="Finalization of Capella DiffMerge"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+      
+   </extension>
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.rpl2re.activities.InitializeTransitionActivity"
+            Identifier="org.polarsys.capella.common.re.rpl2re.activities.InitializeTransitionActivity"
+            Multiple="false"
+            Name="Initialization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.before.analysis"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize transition.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.re2rpl.activities.InitializeDiffMergeUpdateReplicaActivity"
+            Identifier="org.polarsys.capella.common.re.re2rpl.activities.InitializeDiffMergeUpdateReplicaActivity"
+            Multiple="false"
+            Name="Initialization of Capella DiffMerge From Transformation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.activities.DifferencesComputingActivity"
+            Identifier="org.polarsys.capella.common.re.activities.DifferencesComputingActivity"
+            Multiple="false"
+            Name="Differences Filtering DiffMerge From Transformation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.re2rpl.activities.DifferencesFilteringOnlyActivity"
+            Identifier="org.polarsys.capella.common.re.re2rpl.activities.DifferencesFilteringOnlyActivity"
+            Multiple="false"
+            Name="Differences Filtering DiffMerge From Transformation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.rpl2re.activities.InitializeDiffMergeUpdateReActivity"
+            Identifier="org.polarsys.capella.common.re.rpl2re.activities.InitializeDiffMergeUpdateReActivity"
+            Multiple="false"
+            Name="Initialization of Capella DiffMerge From Transformation"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+   </extension>
+   
+   <extension
+         point="org.polarsys.kitalpha.cadence.core.activity.declaration">
+      <ActivityDeclaration
+            ActivityClass="org.polarsys.capella.common.re.activities.FinalizeTransitionActivity"
+            Identifier="org.polarsys.capella.common.re.activities.FinalizeTransitionActivity"
+            Multiple="false"
+            Name="Finalization of transition"
+            WorkflowElementIdentifier="org.polarsys.kitalpha.transposer.after.rule.execution"
+            WorkflowIdentifier="org.polarsys.kitalpha.transposer.workflow">
+         <Description>
+            This activity initialize Transposer for Capella Transformation execution.
+         </Description>
+      </ActivityDeclaration>
+      
+   </extension>
+   
+   <extension point="org.polarsys.capella.common.flexibility.properties">
+      <properties
+            id="org.polarsys.capella.common.re.selection">
+         <group id="org.polarsys.capella.common.re.description"
+                name="Description">
+         </group>
+      </properties>
+   </extension>   
+   
+   
+   <extension
+         point="org.polarsys.capella.common.queries.query">
+         <querySpecification
+               queryIdentifier="GetAllCatalogPkgs">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.GetAllCatalogPkgQuery"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="GetAllCatalogElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.GetAllCatalogElementQuery"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_UsedElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_UsedElements"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_UsedElementLinks">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_UsedElementLinks"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_AllUsedElementLinks">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_AllUsedElementLinks"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_AllUsedElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_AllUsedElements"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_AllUsedCatalogElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_AllUsedCatalogElements"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_ReferencingElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_ReferencingElements"></queryAlgorithm>
+         </querySpecification>
+         
+         <querySpecification
+               queryIdentifier="CatalogElement_ReplicatedElements">
+            <queryAlgorithm algorithm="org.polarsys.capella.common.re.queries.CatalogElement_ReplicatedElements"></queryAlgorithm>
+         </querySpecification>
+         
+   </extension>
+   
+   <extension
+         point="org.polarsys.capella.common.model.helpers.helper">
+      <helperImpl
+            class="org.polarsys.capella.common.re.helpers.ReHelper"
+            nsURI="http://www.polarsys.org/capella/common/re/1.2.0">
+      </helperImpl>
+   </extension>
+   
+   
+   
+</plugin>

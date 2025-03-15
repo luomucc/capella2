@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.polarsys.capella.core.refinement.static
+Bundle-Version: 1.2.2.qualifier
+Bundle-Vendor: %providerName
+Require-Bundle: org.polarsys.capella.core.refinement.framework
+Export-Package: org.polarsys.capella.core.refinement
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Bundle-Localization: plugin

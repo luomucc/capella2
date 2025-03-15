@@ -1,0 +1,272 @@
+= Acceleo 2 queries [deprecated] =
+
+== Basic Model Queries ==
+ 
+{| cellpadding="7" valign="TOP"
+!'''Description'''
+!'''Workbench Selection'''
+!'''Syntax'''
+|-
+| Current Element 
+| Model Element
+| <% current %>
+
+|-
+| Container of current element
+| A model element 
+| <% current.'''eContainer''' %>
+
+|-
+| Type of an element
+| A model element
+| <% current.'''eClass''' %>
+
+|-
+| Total number of elements in a model
+| A model element
+| <% current.'''ancestor.nLast.eAllContents.nSize''' %>
+
+|-
+| Total number of sub-elements
+| A model element
+| <% current.'''eAllContents.nSize''' %>
+
+|}
+
+<br>
+== Diagram Queries ==
+{| cellpadding="7"
+|-
+| '''Description'''
+| '''Workbench Selection'''
+| '''Syntax'''
+
+|-
+| Semantic element associated to a graphical element
+| A diagram / A diagram element
+| <% current.'''target''' %>
+
+|-
+| aird file (non fragmented model)
+| A diagram
+| <% ((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize()) %>
+
+|-
+| All aird files (fragmented model)
+| A diagram
+
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"]) %>
+
+
+|-
+| All diagrams
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors''' %>
+
+|-
+| Number of diagrams
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors.nSize()''' %>
+
+|-
+| All diagrams from kind "Logical Data Flow"
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors[description.name.startsWith("Logical Data Flow Blank")]'''%>
+|-
+| All diagrams except kind "Scenario"
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors[description.name.endsWith("Scenario")==false]''' %>
+
+|-
+| List of different viewpoints
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.viewpoint.nMinimize()''' %>
+
+|-
+| Number of graphical elements in all diagrams
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors.representation.diagramElements.nSize()''' %>
+
+|-
+| Number of graphical elements in all diagrams (including technical elements like style, color…)
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"])'''.ownedViews.ownedRepresentationDescriptors.representation.eAllContents.nSize()''' %>
+|}
+
+== Searching Strings ==
+{| cellpadding="7"
+|-
+| '''Description'''
+| '''Workbench Selection'''
+| '''Syntax'''
+|-
+| All element containing the "TODO" string in their 'Name' property
+| A model element
+| <% current.eAllContents()'''[name.matches(".*TODO.*")]''' %>
+
+|-
+| All element containing the "TODO" string in their 'Summary' property
+| A model element
+| <% current.eAllContents()'''[summary.matches(".*TODO.*")]''' %>
+
+|-
+| All element containing the "TODO" string in their 'Description' property
+| A model element
+| <% current.eAllContents()'''[description.matches(".*TODO.*")]''' %>
+
+|-
+| All diagrams containing a note containing the "TODO" string
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"]).ownedViews.ownedRepresentationDescriptors.'''representation[~element.filter("notation.Diagram").eAllContents("notation.Node")[type=="Note" && description.indexOf("TODO")>=0]]''' %>
+
+|-
+| Number of diagrams containing a note containing the "TODO" string
+| A diagram
+| <% (((current+current.~).ancestor[eClass.name=="DAnalysis"].nMinimize().put("aird") + (get("aird")+get("aird").~+get("aird").~.~+get("aird").~.~).put("airds") + get("airds")+get("airds").referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis+get("airds").referencedAnalysis.referencedAnalysis.referencedAnalysis).nMinimize()[eClass.name=="DAnalysis"]).ownedViews.ownedRepresentationDescriptors.'''representation[~element.filter("notation.Diagram").eAllContents("notation.Node")[type=="Note" && description.indexOf("TODO")>=0]].nSize()''' %>
+|}
+
+== Requirements ==
+{| cellpadding="7"
+|-
+| '''Description'''
+| '''Workbench Selection'''
+| '''Syntax'''
+|-
+| Query to retrieve the list of non-allocated requirements
+| Requirement Package
+| <% current.'''eAllContents[relatedCapellaElements==null]''' %>
+|}
+
+== Model Navigation Examples ==
+{| cellpadding="7"
+|-
+| '''Description'''
+| '''Workbench Selection'''
+| '''Syntax'''
+|-
+| List of functions allocated to a component
+| Any Component
+| <% current.allocatedFunctions %>
+|-
+| List of sub logical components
+| Any Logical Component
+| <% current.subLogicalComponents %>
+|-
+| List of all functions
+- having more than 3 ports
+- allocated to one given component
+- Which name starts with "Store"
+| Any Component
+| <% current.allocatedFunctions[name.startsWith("Store") && eAllContents().filter("FunctionPort").nSize>3] %>
+|}
+
+== Metrics ==
+{| cellpadding="7"
+|-
+| '''Description'''
+| '''Workbench Selection'''
+| '''Syntax'''
+|-
+| Number of XXXX owned by the selected element, where XXXX is the type of a model element (<% current.eClass %> )
+| A model element
+| <% current.eAllContents("XXXX").nSize() %>
+|-
+| Number of Operational Activities
+| OperationalAnalysis
+| <% current.eAllContents("OperationalActivity").nSize() %>
+|-
+| Number of Operational Interactions
+| OperationalAnalysis
+| <% current.eAllContents("FunctionalExchange").nSize() %>
+|-
+| Number of Exchange Items in OA
+| OperationalAnalysis
+| <% current.eAllContents("AbstractExchangeItem").nSize() %>
+|-
+| Number of Types (Classes, Datatypes) in OA
+| OperationalAnalysis
+| <% current.eAllContents("DataType").nSize() %>
+|-
+| Number of Classes in OA
+| OperationalAnalysis
+| 
+<% current.eAllContents("Class").nSize() %>
+|-
+| Number of States or Modes in OA
+| OperationalAnalysis
+| <% (current.eAllContents().filter("State") - current.eAllContents().filter("Mode")).nSize() %>
+|-
+| Number of Operational Entities
+| OperationalAnalysis
+| <% (current.eAllContents("Entity")-current.eAllContents("OperationalActor")).nSize() %>
+|-
+| Number of Operational Actors
+| OperationalAnalysis
+| <% current.eAllContents("OperationalActor").nSize() %>
+|-
+| Number of Operational Roles
+| OperationalAnalysis
+| <% current.eAllContents("Role").nSize() %>
+|-
+| Number of Communication Means
+| OperationalAnalysis
+| <% current.eAllContents("CommunicationMean").nSize() %>
+|-
+| Number of System Functions
+| SystemAnalysis
+| <% current.eAllContents("SystemFunction").nSize() %>
+|-
+| Number of Functional Exchanges in SA
+| SystemAnalysis
+| <% current.eAllContents("FunctionalExchange").nSize() %>
+|-
+| Number of Function Ports in SA
+| SystemAnalysis
+| <% current.eAllContents().filter("FunctionPort").nSize %>
+|-
+| Number of System Actors
+| SystemAnalysis
+| <% current.eAllContents("Actor").nSize() %>
+|-
+| Number of Functional Chains in SA
+| SystemAnalysis
+| <% current.eAllContents("FunctionalChain").nSize() %>
+|-
+| Number of Scenarios in SA
+| SystemAnalysis
+| <% current.eAllContents("Scenario").nSize() %>
+|-
+| Number of Behaviour Components in PA
+| PhysicalArchitecture
+| <% current.eAllContents("PhysicalComponent")[nature=="BEHAVIOR"].nSize %>
+|-
+| Number of Implementation PC (nodes) in PA
+| PhysicalArchitecture
+| <% current.eAllContents("PhysicalComponent")[nature=="NODE"].nSize %>
+|-
+| Number of Physical Links
+| PhysicalArchitecture
+| <% current.eAllContents("PhysicalLink").nSize() %>
+|-
+| Number of Physical Ports
+| PhysicalArchitecture
+| <% current.eAllContents("PhysicalPort").nSize() %>
+|}
+
+
+== Advanced Queries ==
+With Acceleo, you can navigate in elements following references and attributes:
+<%current.outgoing%> on a SystemFunction will retrieve outgoing functional exchanges:<br><br>
+[[Image:Images/12_5_ Acceleo Queries_html_51a25b.png|500x150px]]<br>
+<br>
+There is many way to retrieve which references to use for an element. These references ca be used in a request like the above outgoing reference.
+For instance, you can retrieve references with Acceleo using the following request:
+<%current.eClass.eAllReferences%> (or current.eClass.eAllAttributes to retrieve attributes)
+<br><br>
+[[Image:Images/12_5_ Acceleo Queries_html_m4a26b2e2.png|550x300px]]<br>
+<br>
+One easiest way to retrieve references or attributes is to open the Properties View and go the Expert tab then choose relevant references/attributes for your query
+<br><br>
+[[Image:Images/12_5_ Acceleo Queries_html_m44230212.png|800x250px]]<br><br>
+You just have to write the reference name in a camelCaseFormat to use it with Acceleo (e.g. Available In States => availableInStates)
+ 

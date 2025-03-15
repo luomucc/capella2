@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2006, 2018 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<plugin>
+   <extension
+         point="org.polarsys.capella.core.model.handler.delegateWorkbenchAdvisor">
+      <advisor
+            class="org.polarsys.capella.core.af.integration.AFDelegateWorkbenchAdvisor">
+      </advisor>
+   </extension>
+   <extension point="org.polarsys.kitalpha.resourcereuse.resources">
+	  <resource
+	        domain="AF"
+	        id="org.polarsys.capella.core.viewpoint"
+	        tags="vp, stateReadOnly, stateHidden"
+	        name="Capella viewpoint"
+	        path="/org.polarsys.capella.core.af.integration/model/capella.vp#capella"/>
+   </extension>
+    <extension
+          point="org.polarsys.capella.common.ef.editingDomainListener">
+       <editingDomainListener
+             class="org.polarsys.capella.core.af.integration.listener.MetadataViewpointUpdater">
+       </editingDomainListener>
+    </extension>
+    <extension
+         point="org.polarsys.kitalpha.ad.metadata.contribution">
+       <contribution
+             class="org.polarsys.capella.core.af.integration.CapellaContribution">
+       </contribution>
+    </extension>
+    <extension
+          point="org.polarsys.capella.common.platform.sirius.ted.metadataProvider">
+       <metadataProvider
+             class="org.polarsys.capella.core.af.integration.CapellaMetadataProvider">
+       </metadataProvider>
+    </extension>
+</plugin>

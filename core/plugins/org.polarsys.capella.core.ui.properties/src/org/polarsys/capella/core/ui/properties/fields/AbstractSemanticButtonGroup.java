@@ -1,0 +1,81 @@
+/*******************************************************************************
+ * Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *    Thales - initial API and implementation
+ *******************************************************************************/
+package org.polarsys.capella.core.ui.properties.fields;
+
+import java.util.List;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.views.properties.tabbed.TabbedPropertySheetWidgetFactory;
+
+/**
+ * Abstract based class to implement a semantic field based on buttons.
+ */
+public abstract class AbstractSemanticButtonGroup extends AbstractSemanticField {
+
+  /**
+   * Constructor.
+   * @param widgetFactory
+   */
+  public AbstractSemanticButtonGroup(TabbedPropertySheetWidgetFactory widgetFactory) {
+    super(widgetFactory);
+  }
+
+  /**
+   * Create either a radio button or a check box button according to the given style.
+   * @param group
+   * @param label
+   * @param data
+   * @param enabled
+   * @param style shall be either {@link SWT.RADIO} or {@link SWT.CHECK}
+   * @return a not <code>null</code> object.
+   */
+  protected Button createButton(Composite group, String label, Object data, boolean enabled, int style) {
+    Button button = _widgetFactory.createButton(group, label, style);
+    button.addSelectionListener(this);
+    // Link this button to its semantic value.
+    button.setData(data);
+    button.setEnabled(enabled);
+    if(!enabled){
+      button.setForeground(Display.getCurrent().getSystemColor(SWT.COLOR_GRAY));
+    }
+    return button;
+  }
+
+  /**
+   * Enable or disable given button.
+   * @param button
+   * @param enabled
+   */
+  protected void enableButton(Button button, boolean enabled) {
+    if (null != button && !button.isDisposed()) {
+      button.setEnabled(enabled);
+    }
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  public void setEnabled(boolean enabled) {
+    for (Button button : getSemanticFields()) {
+      enableButton(button, enabled);
+    }
+  }
+
+  /**
+   * Get all semantic fields in the current button group.
+   */
+  public abstract List<Button> getSemanticFields();
+}

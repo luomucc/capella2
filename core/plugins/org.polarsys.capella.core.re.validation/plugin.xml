@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="capella.category/design/consistency/compliance"
+            name="RPL Compliance">
+      </category>
+      <constraintProvider>
+         <package
+               namespaceUri="http://www.polarsys.org/capella/common/re/1.2.0">
+         </package>
+         <constraints
+               categories="capella.category/design/consistency">
+            <constraint
+                  class="org.polarsys.capella.core.re.validation.design.consistency.DCON_02_Rpl2RecConformanceConstraint"
+                  id="DCON_02"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="DCON_02 - RPL to REC conformance"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  {0} (RPL) is not up to date compared to its origin {1} (REC)
+               </message>
+               <target
+                     class="CatalogElement">
+               </target>
+               <description>
+                  This rule check if a RPL is up to date compared to its origin REC.
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+      <constraintProvider>
+         <package
+               namespaceUri="*">
+         </package>
+         <constraints
+               categories="capella.category/design/consistency/compliance">
+            <constraint
+                  class="org.polarsys.capella.core.re.validation.design.consistency.BlackBoxComplianceWithRealizationLinks"
+                  id="org.polarsys.capella.core.re.validation.compliance.blackbox.withRealizationLinks"
+                  isEnabledByDefault="false"
+                  lang="Java"
+                  mode="Live"
+                  name="Blackbox"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  Modification of feature &apos;&apos;{0}&apos;&apos; of element &apos;&apos;{1}&apos;&apos; violates BLACK_BOX RPL compliancy
+               </message>
+               <description>
+                  In live validation mode, the rule prevents all non REC conformant modifications on a RPL, with the exception that it is allowed to add realization links to RPL elements. In batch mode the rule verifies Blackbox compliance partially by checking that no external content was added to any of the validated RPLs elements (with the above mentioned exception for realization links).
+               </description>
+            </constraint>
+         </constraints>
+      </constraintProvider>
+   </extension>
+</plugin>

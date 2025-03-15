@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Thematic highlights" link_to="PLUGINS_ROOT/org.polarsys.capella.doc/toc.xml#thematic">
+	<topic href="html/Focus on constraints and opaque expressions/Focus on constraints and opaque expressions.html" label="Focus on constraints and opaque expressions"> 
+	</topic>
+	<topic href="html/Focus on state machines/Focus on state machines.html" label="Focus on state machines"> 
+	</topic>
+	<topic href="html/Functional Analysis to Interface Engineering/Functional Analysis to Interface Engineering.html" label="Functional Analysis to Interface Engineering"> 
+	</topic>
+	<topic href="html/Performance Recommandations/Performance Recommandations.html" label="Performance Recommandations"> 
+	</topic>
+	<topic label="Interfaces and Data Modeling in Capella">
+    <topic href="html/Interfaces and Data Modeling/Introduction.html" label="Introduction">
+    </topic>
+    <topic href="html/Interfaces and Data Modeling/Basic Constructs.html" label="Basic Constructs">
+    </topic>
+    <topic href="html/Interfaces and Data Modeling/Advanced Constructs.html" label="Advanced Constructs">
+    </topic>
+    <topic href="html/Interfaces and Data Modeling/Methodological Recommendations.html" label="Methodological Recommendation">
+    </topic>
+    <topic href="html/Interfaces and Data Modeling/Appendix.html" label="Appendix">
+    </topic>
+   </topic>
+ <anchor id="Thematic Highlights"/>
+</toc>

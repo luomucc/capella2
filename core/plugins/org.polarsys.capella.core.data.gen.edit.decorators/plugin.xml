@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+ 
+  Contributors:
+     Thales - initial API and implementation
+-->
+<plugin>
+  <extension-point id="delegatedDecorator" name="Delegated Decorator" schema="schema/delegatedDecorator.exsd"/>
+
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.capellacommon.provider.CapellacommonItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/capellacommon/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.capellacore.provider.CapellacoreItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/capellacore/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.capellamodeller.provider.CapellamodellerItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/capellamodeller/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.cs.provider.CsItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/cs/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.ctx.provider.CtxItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/ctx/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.epbs.provider.EpbsItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/epbs/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.fa.provider.FaItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/fa/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.information.communication.provider.CommunicationItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/information/communication/1.2.0"/>
+   </extension>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.information.datavalue.provider.DatavalueItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/information/datavalue/1.2.0"/>
+   </extension>
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.information.datatype.provider.DatatypeItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/information/datatype/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.information.provider.InformationItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/information/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.la.provider.LaItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/la/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.oa.provider.OaItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/oa/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.pa.provider.PaItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/pa/1.2.0"/>
+   </extension>
+  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <factory
+        class="org.polarsys.capella.core.data.sharedmodel.provider.SharedmodelItemProviderDecoratorAdapterFactory"
+        supportedTypes="org.eclipse.emf.edit.provider.IItemLabelProvider"
+        uri="http://www.polarsys.org/capella/core/sharedmodel/1.2.0"/>
+   </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.capellacommon.provider.CapellacommonItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.capellacore.provider.CapellacoreItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.capellamodeller.provider.CapellamodellerItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.cs.provider.CsItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.ctx.provider.CtxItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.epbs.provider.EpbsItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.fa.provider.FaItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.information.communication.provider.CommunicationItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.information.datavalue.provider.DatavalueItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+   <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.information.datatype.provider.DatatypeItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.information.provider.InformationItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.interaction.provider.InteractionItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.la.provider.LaItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.oa.provider.OaItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.pa.provider.PaItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.decoratorAdapterFactory">
+     <decoratorAdapterFactory
+           class="org.polarsys.capella.core.data.sharedmodel.provider.SharedmodelItemProviderDecoratorAdapterFactory">
+     </decoratorAdapterFactory>
+  </extension>
+</plugin>

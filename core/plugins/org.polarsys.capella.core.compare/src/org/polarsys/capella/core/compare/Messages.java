@@ -1,0 +1,71 @@
+/*******************************************************************************
+ * Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *  
+ * Contributors:
+ *    Thales - initial API and implementation
+ *******************************************************************************/
+package org.polarsys.capella.core.compare;
+
+import org.eclipse.osgi.util.NLS;
+
+
+/**
+ * Message management.
+ */
+@SuppressWarnings("javadoc")
+public class Messages extends NLS {
+  private static final String BUNDLE_NAME = "org.polarsys.capella.core.compare.messages"; //$NON-NLS-1$
+  public static String CapellaComparisonFactory_Label;
+  public static String CapellaComparisonMethod_Usage_P2L;
+  public static String CapellaComparisonMethod_Usage_P2L_Tooltip;
+  public static String CapellaComparisonMethod_Usage_Transition;
+  public static String CapellaComparisonMethod_Usage_Transition_Tooltip;
+  public static String CapellaComparisonViewer_MenuItemShowDiagramContent_Title;
+  public static String CapellaComparisonViewer_MenuItemShowDiagramContent_Tooltip;
+  public static String CapellaMatchPolicy_Criterion_ExchangeEnds;
+  public static String CapellaMatchPolicy_Criterion_ExchangeEnds_Tooltip;
+  public static String CapellaMatchPolicy_Criterion_ID_Sirius_Diagram;
+  public static String CapellaMatchPolicy_Criterion_ID_Sirius_Diagram_Tooltip;
+  public static String CapellaMatchPolicy_Criterion_P2L;
+  public static String CapellaMatchPolicy_Criterion_P2L_Tooltip;
+  public static String CapellaMatchPolicy_Criterion_SIDs;
+  public static String CapellaMatchPolicy_Criterion_SIDs_Tooltip;
+  public static String CapellaMatchPolicy_Criterion_Technical;
+  public static String CapellaMatchPolicy_Criterion_Technical_Tooltip;
+  public static String CapellaScope_DifferentVersion;
+  public static String CapellaScope_DifferentVersionInterruption;
+  public static String CapellaScope_PermissionCommandName;
+  public static String PredefinedTypesCmd_boolean_name;
+  public static String PredefinedTypesCmd_byte_name;
+  public static String PredefinedTypesCmd_char_name;
+  public static String PredefinedTypesCmd_double_name;
+  public static String PredefinedTypesCmd_falseValue_name;
+  public static String PredefinedTypesCmd_float_name;
+  public static String PredefinedTypesCmd_hexadecimal_name;
+  public static String PredefinedTypesCmd_integer_name;
+  public static String PredefinedTypesCmd_long_name;
+  public static String PredefinedTypesCmd_longLong_name;
+  public static String PredefinedTypesCmd_predefinedDataTypePkg_name;
+  public static String PredefinedTypesCmd_short_name;
+  public static String PredefinedTypesCmd_string_name;
+  public static String PredefinedTypesCmd_trueValue_name;
+  public static String PredefinedTypesCmd_unsignedInteger_name;
+  public static String PredefinedTypesCmd_unsignedLong_name;
+  public static String PredefinedTypesCmd_unsignedLongLong_name;
+  public static String PredefinedTypesCmd_unsignedShort_name;
+  static {
+    // initialize resource bundle
+    NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+  }
+  
+  /**
+   * Constructor
+   */
+  private Messages() {
+    // Nothing needed
+  }
+}

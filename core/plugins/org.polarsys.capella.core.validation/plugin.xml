@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+  Copyright (c) 2006, 2017 THALES GLOBAL SERVICES.
+  All rights reserved. This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License v1.0
+  which accompanies this distribution, and is available at
+  http://www.eclipse.org/legal/epl-v10.html
+
+  Contributors:
+       Thales - initial API and implementation
+-->
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="capella.category"
+            name="Capella">
+         <category
+               id="quality"
+               name="Quality">
+                   <![CDATA[Quality-related rules check for example that most important elements have descriptions.]]>
+         </category>
+         <category
+               id="integrity"
+               name="Integrity">
+                   <![CDATA[This category contains Capella additional rules about the model integrity. For example,
+• Verification that two distinct elements have distinct IDs
+• Verification of naming conflicts]]>
+         </category>
+         <category
+               id="design"
+               name="Design">
+                   <![CDATA[Design-related rules gather all business rules within an engineering phase (System Analysis, Logical Architecture, etc.). This set of rules does take into account what is modeled in the previous or following engineering phase.
+
+This category is divided in four sub categories:
+• Well-formedness. For example, a Join Function has only one outgoing Functional Exchange, a Class Property is typed, etc.
+• Consistency. For example, the Interface usage/implementation by a sub component requires the same Interface usage/implementation by/from the parent component
+• Completeness. For example, a leaf Function has to be allocated to one Component, an Interface references at least one Exchange Item, etc.
+• Coverage. For example, an Actor is involved in at least one Capability, a Component appears on at least one Scenario, etc.
+
+The difference between Completeness and Coverage can appear subtle. Completeness is close to being inconsistent (a leaf Function really HAS to be allocated to a Component). But according to the current objectives of the system engineer, this “almost inconsistence” might not be important for the moment. Coverage is more about the risk of forgetting things is the system design, or not to be precise enough.]]>
+            <category
+                  id="coverage"
+                  name="Coverage">
+            </category>
+            <category
+                  id="well-formedness"
+                  name="Well-Formedness">
+               <category
+                     id="state_machines"
+                     name="State Machines">
+               </category>
+               <category
+                     id="dataflows"
+                     name="Dataflows">
+               </category>
+               <category
+                     id="components"
+                     name="Components">
+               </category>
+               <category
+                     id="data"
+                     name="Data">
+               </category>
+               <category
+                     id="interfaces"
+                     name="Interfaces">
+               </category>
+               <category
+                     id="scenarios"
+                     name="Scenarios">
+               </category>
+               <category
+                     id="capabilities"
+                     name="Capabilities">
+               </category>
+               <category
+                     id="use_cases"
+                     name="Use Cases">
+               </category>
+            </category>
+            <category
+                  id="consistency"
+                  name="Consistency">
+            </category>
+            <category
+                  id="completeness"
+                  name="Completeness">
+            </category>
+         </category>
+         <category
+               id="structural_conformance_to_m2"
+               name="Structural Conformance to M2">
+         </category>
+         <category
+               id="transition"
+               name="Transition">
+            <category
+                  id="consistency"
+                  name="Consistency">
+               <category
+                     id="data"
+                     name="Data">
+               </category>
+               <category
+                     id="state_machines"
+                     name="State Machines">
+               </category>
+               <category
+                     id="interfaces"
+                     name="Interfaces">
+               </category>
+               <category
+                     id="dataflows"
+                     name="Dataflows">
+               </category>
+               <category
+                     id="components"
+                     name="Components">
+               </category>
+               <category
+                     id="scenarios"
+                     name="Scenarios">
+               </category>
+               <category
+                     id="capabilities"
+                     name="Capabilities">
+               </category>
+            </category>
+            <category
+                  id="justification"
+                  name="Justification">
+               <category
+                     id="physical_architecture"
+                     name="Physical Architecture">
+               </category>
+               <category
+                     id="logical_architecture"
+                     name="Logical Architecture">
+               </category>
+               <category
+                     id="epbs"
+                     name="EPBS">
+               </category>
+               <category
+                     id="generic"
+                     name="Generic">
+               </category>
+               <category
+                     id="system_analysis"
+                     name="System Analysis">
+               </category>
+            </category>
+         </category>
+      </category>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <clientContext
+            id="CapellaValidationRulesContext">
+         <selector
+               class="org.polarsys.capella.core.validation.ValidationDelegateClientSelector">
+         </selector>
+      </clientContext>
+      <binding
+            category="capella.category"
+            context="CapellaValidationRulesContext">
+         <excludeConstraint
+               ref="org.polarsys.capella.core.data.core.validation.I_37">
+         </excludeConstraint>
+      </binding>
+      <clientContext
+            default="false"
+            id="CapellaMoveElementsValidationContext">
+         <enablement>
+            <test
+                  property="org.polarsys.capella.common.ui.workbenchproperties.activePartId"
+                  value="org.polarsys.capella.core.libraries.ui.moveview">
+            </test>
+         </enablement>
+      </clientContext>
+      <binding
+            constraint="org.polarsys.capella.core.data.core.validation.I_37"
+            context="CapellaMoveElementsValidationContext">
+      </binding>
+   </extension>
+   
+  <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.polarsys.capella.core.validation.prefs.ExportValidationPreferenceInitializer">
+      </initializer>
+   </extension>
+  <extension
+        id="markers"
+        name="%capella.maker.name"
+        point="org.eclipse.core.resources.markers">
+     <super
+           type="org.eclipse.emf.ecore.diagnostic">
+     </super>
+     <persistent
+           value="false">
+     </persistent>
+  </extension>
+  <extension
+        point="org.polarsys.capella.core.model.handler.diagnosticianProviders">
+     <provider
+           class="org.polarsys.capella.core.validation.DiagnosticianProvider">
+     </provider>
+  </extension>
+  <extension point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+         id="org.polarsys.capella.core.validation.expressions.EObjectPropertyTester"
+         type="org.eclipse.emf.ecore.EObject"
+         namespace="org.polarsys.capella.core.validation.expressions"
+         properties="ePackage"
+         class="org.polarsys.capella.core.validation.expressions.EObjectPropertyTester">
+      </propertyTester>
+  </extension>
+</plugin>

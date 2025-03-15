@@ -1,0 +1,78 @@
+=Other Layout Facilities=
+
+In order to '''facilitate the layout set up of elements on diagrams''', some Diagram facilities exist:  
+
+==Elements Alignment==
+
+If you select several elements, you can align them on the right, middle, left, top...
+
+[[Image:../../Images/Tips20.png]]
+
+==Elements Distribution==
+
+If you select several elements, you can distribute them vertically, horizontally (i.e ensure that there is a gap of the same size between each element in the chosen direction).
+
+[[Image:../../Images/Tips21.png]]
+
+==Layout commands to set edges with connected ports vertical or horizontal  ==
+
+
+The goal of this feature is to '''assist user to set edge selection vertical or horizontal''' in order to help exchange layout. If the edge is connected to "ports", the '''"port" is moved too'''.''
+To do this, it is recommended to arrange all connected ports first, then use the right-to-left multiple selection.
+
+[[File:../../Images/Tips22.png|thumbnail|600px|]]
+
+==Arrange connected ports==
+
+In addition to the standard automatic layout, this specific action allows '''to arrange automatically the edges/ports so that they are as short as possible by preserving routing style'''. This action moves the ports of a node / container when necessary. It is useful when the positions of the nodes and containers have already been defined and edges still need a better layout.
+
+[[File:../../Images/8_4_Arrange.png|thumbnail|700px|]]
+
+<br>
+
+         
+{| border="1"
+|-
+| 
+[[Image:../../Images/InfoIcon.png|48x48px]]
+
+ 
+| 
+Graphical elements have to be unpinned before running this action. To unpin an element, choose "Unpin selected elements on the diagram menu"
+
+ 
+|}  
+<br>
+
+
+==Multi selection for graphical move of ports+exchanges  ==
+
+This feature aims to '''move the group {edge, labels, ports}''' in a single operation when using the '''''F3 shortcut''''' and drag/move the edge.
+
+Moreover, by selecting multiple edges with ports and pressing '''''F3''''' key, you can move them simultaneously:
+
+[[Image:../../Images/Tips23.png]]
+
+
+==Snap back labels on edge selection==
+Although there is already a button to snap back a label to it original position on label selection, a new button "''Snap Back Label(s)''" '''on edge selection''' allows to snap back all labels (source, middle, target) of this edge at the same time:
+
+[[File:../../Images/Tips73.png|thumbnail|800px|]]
+
+
+==Display link between an edge and its label==
+It is a new preference added in '''Sirius > Sirius Diagram > Connections''':
+[[File:../../Images/Tips74.png|thumbnail|700px|]]
+
+When you '''select an edge or a label''', graphical link appears between them:
+[[File:../../Images/Tips75.png|thumbnail|700px|]]
+
+
+==Copy Paste Of Notes==
+ 
+To quickly copy paste Notes on a diagram, '''click on CTRL and move the Notes''': new Notes are created.
+
+[[File:../../Images/TipsCopyNote.png|thumbnail|800px|]]
+ 
+<br>
+<br>

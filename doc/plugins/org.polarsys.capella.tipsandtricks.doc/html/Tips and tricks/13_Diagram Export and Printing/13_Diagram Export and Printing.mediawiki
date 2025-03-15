@@ -1,0 +1,48 @@
+=Diagram Export and Printing=
+==Export As Image==
+
+You can '''export a diagram to an image file'''. In order to do that right-click on the diagram and choose the menu '''''Export diagram as image''''' or on the icon present in the tab-bar.
+
+[[Image:../../Images/Tips58.png]]
+
+[[Image:../../Images/Tips59.png]]
+
+You can:
+
+* Select the export location
+* Choose the format among JPG, PNG, SVG, BMP, GIF
+* Choose the quality of the exported image (image size)
+* Export it to HTML Format
+
+==Batch Image Export==
+
+It is possible '''to export all diagrams of a representations file at once'''. 
+
+In order to do that; right-click on your representations file (aird file) then choose the menu '''''Export representations as image'''''.
+
+[[Image:../../Images/Tips61.png]]
+
+[[Image:../../Images/Tips60.png]]
+
+You can:
+
+* Select the export location
+* Choose the format among JPG, PNG, SVG, BMP, GIF
+* Choose the quality of the exported image (image size)
+* Export it to HTML Format
+
+'''Note''': The export performance will decrease and will take more time the more you increase the image size.
+
+==Set Export Image Size as Preference==
+
+In the '''Sirius > Sirius Diagram''' preference page, you can set the size of the exported images as a preference so that this size will be used for all your export.
+
+[[Image:../../Images/export_image_pref.png]]
+
+==Print Area Preview==
+
+Before sending a diagram to a printer, it can be interesting to arrange the elements of the diagram to avoid them to be split by a page break, to help doing so use the command '''''Diagram > View > page Breaks''''' to display page breaks on the diagram background.
+
+[[File:../../Images/Tips69.png|thumbnail|600px|]]
+
+'''Note''': Use the same command to hide the page breaks displayed on the diagram.
