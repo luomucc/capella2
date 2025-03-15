@@ -27,14 +27,6 @@ jobs:
     - name: Build with Maven1
       run:  mvn clean verify -f releng/plugins/org.polarsys.capella.targets/pom.xml
 
-    - name: Maven Cahe
-      uses: actions/cache@v1
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
-
     - name: Build with Maven
       run: mvn -Djacoco.skip=true -DjavaDocPhase=none -Pfull -DSKIP_SONAR=true clean package -f pom.xml
 
