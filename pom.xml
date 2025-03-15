@@ -91,6 +91,11 @@
 							<arch>x86_64</arch>
 						</environment>
 						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>aarch64</arch>
+						</environment>
+						<environment>
 							<os>macosx</os>
 							<ws>cocoa</ws>
 							<arch>x86_64</arch>
@@ -273,27 +278,27 @@
 				<module>common/features/org.polarsys.capella.common.feature</module>
 				<module>common/features/org.polarsys.capella.common.ui.feature</module>
 				<module>common/plugins</module>
-				
+
 				<module>core/features</module>
 				<module>core/plugins</module>
-				
+
 				<module>doc/features/org.polarsys.capella.doc.feature</module>
 				<module>doc/plugins</module>
-				
+
 				<module>ext/detachment/features/org.polarsys.capella.detachment.feature</module>
 				<module>ext/detachment/plugins/org.polarsys.capella.detachment.propertyvalue</module>
 				<module>ext/detachment/plugins/org.polarsys.capella.detachment.version.precondition</module>
 				<module>legacy/plugins/org.polarsys.capella.common.mdsofa.common</module>
-				
+
 				<module>patterns/features/org.polarsys.capella.patterns.feature</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.obfuscator</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.ui</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.migration</module>
-				
+
 				<module>releng/cdo/features</module>
 				<module>releng/cdo/plugins</module>
-				
+
 				<module>releng/features/org.polarsys.capella.rcp.feature</module>
 				<module>releng/plugins/org.polarsys.capella.rcp</module>
 				<module>releng/plugins/org.polarsys.capella.rcp.product</module>
@@ -321,24 +326,24 @@
 				<module>common/features/org.polarsys.capella.common.feature</module>
 				<module>common/features/org.polarsys.capella.common.ui.feature</module>
 				<module>common/plugins</module>
-				
+
 				<module>core/features</module>
 				<module>core/plugins</module>
-				
+
 				<module>doc/features/org.polarsys.capella.doc.feature</module>
 				<module>doc/plugins</module>
-				
+
 				<module>ext/detachment/features/org.polarsys.capella.detachment.feature</module>
 				<module>ext/detachment/plugins/org.polarsys.capella.detachment.propertyvalue</module>
 				<module>ext/detachment/plugins/org.polarsys.capella.detachment.version.precondition</module>
 				<module>legacy/plugins/org.polarsys.capella.common.mdsofa.common</module>
-				
+
 				<module>patterns/features/org.polarsys.capella.patterns.feature</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.obfuscator</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.ui</module>
 				<module>patterns/plugins/org.polarsys.capella.patterns.migration</module>
-				
+
 				<module>releng/features/org.polarsys.capella.rcp.feature</module>
 				<module>releng/plugins/org.polarsys.capella.rcp</module>
 				<module>releng/plugins/org.polarsys.capella.rcp.product</module>
@@ -363,7 +368,7 @@
 				<!-- common bundles -->
 				<module>common/features/org.polarsys.capella.common.feature</module>
 				<module>common/plugins</module>
-				
+
 				<module>legacy/plugins/org.polarsys.capella.common.mdsofa.common</module>
 
 				<!-- core bundles -->
