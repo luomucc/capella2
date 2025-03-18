@@ -24,8 +24,18 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Restore Maven cache
+      uses: skjolber/maven-cache-github-action@v3.1.1
+      with:
+          step: restore
+
     - name: Build with Maven1
       run:  mvn clean verify -f releng/plugins/org.polarsys.capella.targets/pom.xml
+
+    - name: Save Maven cache
+      uses: skjolber/maven-cache-github-action@v3.1.1
+      with:
+        step: save
 
     - name: Build with Maven
       run: mvn -Djacoco.skip=true -DjavaDocPhase=none -Pfull -DSKIP_SONAR=true clean package -f pom.xml
@@ -49,8 +59,11 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload Assets to Release with a wildcard
-      uses: csexton/release-asset-action@v3
+    - name: Upload binaries to release
+      uses: svenstaro/upload-release-action@v2
       with:
-        pattern: "./releng/plugins/org.polarsys.capella.rcp.product/target/products/*.zip"
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./releng/plugins/org.polarsys.capella.rcp.product/target/products/*.zip
+        tag: release-${{ steps.get_timestamp.outputs.timestamp }}
+        overwrite: true
+        file_glob: true
