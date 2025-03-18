@@ -33,24 +33,38 @@ jobs:
     - name: echo log
       run: ls -l ./releng/plugins/org.polarsys.capella.rcp.product/target/products
 
+
+    - name: Get current timestamp
+      id: get_timestamp
+      run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%S')"
+
+    - name: Create a single ZIP file containing all artifacts
+      run: |
+        TIMESTAMP=${{ steps.get_timestamp.outputs.timestamp }}
+        OUTPUT_ZIP="all-artifacts-${TIMESTAMP}.zip"
+        ARTIFACTS_DIR="./releng/plugins/org.polarsys.capella.rcp.product/target/products" # 修改为实际存放ZIP文件的目录
+        zip -r $OUTPUT_ZIP $ARTIFACTS_DIR/*.zip
+        echo "::set-output name=output_zip::${OUTPUT_ZIP}"
+      id: compress_artifacts
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v1.0.0
-        release_name: Release v1.0.0
+        tag_name: release-${{ steps.get_timestamp.outputs.timestamp }}
+        release_name: Release-${{ steps.get_timestamp.outputs.timestamp }}
         draft: false
         prerelease: false
 
-    - name: Upload Release Asset
-      id: upload-release-asset
+    - name: Upload the compressed ZIP file
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./releng/plugins/org.polarsys.capella.rcp.product/target/products/
-        asset_name: file.zip
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # 获取上一步创建的Release URL
+        asset_path: ./${{ steps.compress_artifacts.outputs.output_zip }}
+        asset_name: ${{ steps.compress_artifacts.outputs.output_zip }}
         asset_content_type: application/zip
+
