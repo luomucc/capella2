@@ -49,13 +49,8 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload multiple artifacts ZIP file
-      run: |
-        for file in $(find ./releng/plugins/org.polarsys.capella.rcp.product/target/products -name "*.zip"); do
-          asset_name=$(basename "$file")
-          curl -X POST \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: $(file -b --mime-type "$file")" \
-            --data-binary @"$file" \
-            "${{ steps.create_release.outputs.upload_url }}?name=${asset_name}"
-        done
+    - name: Upload Assets to Release with a wildcard
+      uses: csexton/release-asset-action@v3
+      with:
+        pattern: "./releng/plugins/org.polarsys.capella.rcp.product/target/products/*.zip"
+        github-token: ${{ secrets.GITHUB_TOKEN }}
